@@ -11,12 +11,12 @@
     },
     "installer": {
         "script": [
-            "Start-Process -File \"$dir\\PlayStationAccessoriesInstaller.exe\" -ArgumentList '/S' -Wait"
+            "Start-Process -FilePath \"$dir\\PlayStationAccessoriesInstaller.exe\" -ArgumentList '/S' -Wait"
         ]
     },
     "uninstaller": {
         "script": [
-            "Get-WmiObject -Query \"SELECT * FROM Win32_Product WHERE Name = 'PlayStation Accessories'\" | ForEach-Object { $_.Uninstall() }"
+            "Start-Process -FilePath \"C:\\Program Files\\PlayStation Accessories\\uninstall.exe\" -ArgumentList '/S' -Wait"
         ]
     },
     "shortcuts": [
